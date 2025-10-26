@@ -107,6 +107,3 @@ Hook to access popover context values inside subcomponents.
 
 All components are unstyled. Use your own styles via `className` or `style` props.
 
-## Example
-
-See [Storybook](../storybook/popover) for more examples.
