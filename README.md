@@ -117,7 +117,7 @@ const { open, onClose, titleId, descriptionId } = useDialog();
 ### Planned headless components
 
 - [x] Dialog
-- [ ] Popover
+- [x] Popover
 - [ ] Tabs
 - [ ] Accordion
 - [ ] Menu

@@ -1,6 +1,6 @@
 // useDialog.ts
 import { useContext } from "react";
-import { DialogContext } from "./dialogContext"; // export DialogContext from Dialog.tsx
+import { DialogContext } from "../dialogContext"; // export DialogContext from Dialog.tsx
 
 export function useDialog() {
     const ctx = useContext(DialogContext);

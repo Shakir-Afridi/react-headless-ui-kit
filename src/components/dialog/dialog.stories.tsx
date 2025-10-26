@@ -54,10 +54,33 @@ export const Basic: Story = {
                         <DialogActions
                             style={{ marginTop: 16, display: "flex", gap: 8 }}
                         >
-                            <button onClick={() => alert("Confirmed!")}>
+                            <button
+                                style={{
+                                    padding: "0.5rem 1rem",
+                                    border: "1px solid #ccc",
+                                    borderRadius: 4,
+                                    background: "#f0f0f0",
+                                    cursor: "pointer",
+                                }}
+                                onClick={() => {
+                                    alert("Confirmed!");
+                                    onClose();
+                                }}
+                            >
                                 Confirm
                             </button>
-                            <button onClick={onClose}>Close</button>
+                            <button
+                                style={{
+                                    padding: "0.5rem 1rem",
+                                    border: "1px solid #ccc",
+                                    borderRadius: 4,
+                                    background: "#f9f9f9",
+                                    cursor: "pointer",
+                                }}
+                                onClick={onClose}
+                            >
+                                Close
+                            </button>
                         </DialogActions>
                     </DialogContent>
                 </DialogOverlay>
@@ -66,7 +89,18 @@ export const Basic: Story = {
 
         return (
             <div>
-                <button onClick={() => setOpen(true)}>Open dialog</button>
+                <button
+                    style={{
+                        padding: "0.5rem 1rem",
+                        border: "1px solid #ccc",
+                        borderRadius: 4,
+                        background: "#f9f9f9",
+                        cursor: "pointer",
+                    }}
+                    onClick={() => setOpen(true)}
+                >
+                    Open dialog
+                </button>
                 <Dialog open={open} onClose={() => setOpen(false)}>
                     <DialogInner />
                 </Dialog>
