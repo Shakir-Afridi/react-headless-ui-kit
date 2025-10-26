@@ -36,9 +36,9 @@ Explore all hooks interactively on Storybook:
 ## 📦 Installation
 
 ```bash
-npm install @your-scope/headless-ui
+npm install react-headless-ui-kit
 # or
-yarn add @your-scope/headless-ui
+yarn add react-headless-ui-kit
 ```
 
 ## 🚀 Usage Example
@@ -52,7 +52,7 @@ import {
   DialogDescription,
   DialogActions,
   useDialog,
-} from '@your-scope/headless-ui';
+} from 'react-headless-ui-kit';
 import React, { useState } from 'react';
 
 export default function Example() {
