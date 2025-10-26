@@ -1,73 +1,143 @@
-# React + TypeScript + Vite
+# 🧩 Headless React UI Kit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![license](https://img.shields.io/github/license/Shakir-Afridi/react-headless-ui-kit)](LICENSE)
+[![issues](https://img.shields.io/github/issues/Shakir-Afridi/react-headless-ui-kit)](https://github.com/Shakir-Afridi/react-headless-ui-kit/issues)
+[![typescript](https://img.shields.io/badge/TypeScript-Ready-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![react](https://img.shields.io/badge/React-19+-61dafb?logo=react)](https://react.dev/)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A collection of **unstyled, accessible, headless UI primitives** for React.  
+Focus on **behavior and accessibility**, leave **styling** to your design system.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- ♿ **Accessible by default** — ARIA roles, keyboard navigation, focus management
+- 🎨 **Headless** — no styles, just behavior; bring your own CSS, Tailwind, or styled-components
+- 🧱 **Composable** — subcomponents and hooks for maximum flexibility
+- 🔌 **Lightweight** — minimal dependencies, built with modern React
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install @your-scope/headless-ui
+# or
+yarn add @your-scope/headless-ui
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Usage Example
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```tsx
+import {
+  Dialog,
+  DialogOverlay,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+  DialogActions,
+  useDialog,
+} from '@your-scope/headless-ui';
+import React, { useState } from 'react';
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+export default function Example() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div>
+      <button onClick={() => setOpen(true)}>Open dialog</button>
+
+      <Dialog open={open} onClose={() => setOpen(false)}>
+        <DialogOverlay className="fixed inset-0 bg-black/50 grid place-items-center">
+          <DialogContent className="bg-white p-4 rounded max-w-md w-full">
+            <DialogTitle className="text-lg font-bold">Example Dialog</DialogTitle>
+            <DialogDescription className="text-sm text-gray-600">
+              This is an unstyled headless dialog component.
+            </DialogDescription>
+            <DialogActions className="flex gap-2 mt-4">
+              <button onClick={() => alert('Confirmed!')}>Confirm</button>
+              <button onClick={() => setOpen(false)}>Close</button>
+            </DialogActions>
+          </DialogContent>
+        </DialogOverlay>
+      </Dialog>
+    </div>
+  );
+}
 ```
+
+## 🧩 API
+
+`<Dialog />`
+
+- Props
+  - `open: boolean` — whether the dialog is open
+  - `onClose: () => void` — called when dialog should close
+  - `children: ReactNode` — subcomponents (`DialogOverlay`, `DialogContent`, etc.)
+  - `container?: Element` — optional portal container (defaults to `document.body`)
+
+`<DialogOverlay />`
+
+- Wraps the backdrop behind the dialog
+- Handles click-to-close by default
+
+`<DialogContent />`
+
+- The actual dialog container
+- Handles focus trapping and accessibility attributes
+
+`<DialogTitle />`
+
+- Provides the accessible name for the dialog (`aria-labelledby`)
+
+`<DialogContent />`
+
+- Provides the accessible content (`aria-describedby`)
+
+`<DialogActions />`
+
+- A simple wrapper for action buttons
+
+### 🎣 Hook: `useDialog`
+
+Access dialog context values inside any subcomponent:
+
+```tsx
+const { open, onClose, titleId, descriptionId } = useDialog();
+```
+
+- `open` — current open state
+- `onClose` — function to close the dialog
+- `titleId` / `descriptionId` — auto-generated IDs for accessibility wiring
+
+## 📚 Roadmap
+
+### Planned headless components
+
+- [ ] Popover
+- [ ] Tabs
+- [ ] Accordion
+- [ ] Menu
+- [ ] Tooltip
+- [ ] Combobox
+- [ ] Switch
+- [ ] Slider
+- [ ] Date Picker
+
+## 🛠 Development
+
+```bash
+# Run Storybook
+npm run storybook
+```
+
+## 👨‍💻 Author
+
+React Headless UI Kit — maintained by passionate open-source developers who believe in clean, reusable React logic
+
+## ⭐ Support
+
+If you find this library useful, please give it a star ⭐ on GitHub —
+it helps others discover and support the project!
