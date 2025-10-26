@@ -100,7 +100,7 @@ export default function Example() {
 
 - A simple wrapper for action buttons
 
-### 🎣 Hook: `useDialog`
+`useDialog`
 
 Access dialog context values inside any subcomponent:
 
@@ -116,6 +116,7 @@ const { open, onClose, titleId, descriptionId } = useDialog();
 
 ### Planned headless components
 
+- [x] Dialog
 - [ ] Popover
 - [ ] Tabs
 - [ ] Accordion
