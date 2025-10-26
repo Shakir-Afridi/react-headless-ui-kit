@@ -1,16 +1,22 @@
 {
     "name": "react-headless-ui-kit",
-    "private": true,
+    "description": "Headless, accessible React UI primitives — composable and design-system agnostic.",
+    "private": false,
     "version": "0.0.0",
-    "main": "dist/index.cjs.js",
-    "module": "dist/index.esm.js",
+    "author": {
+        "name": "Shakir Ullah",
+        "email": "shakir201650@gmail.com"
+    },
+    "main": "dist/react-headless-ui-kit.umd.js",
+    "module": "dist/react-headless-ui-kit.es.js",
     "types": "dist/index.d.ts",
     "files": [
         "dist"
     ],
     "scripts": {
-        "build": "tsup",
         "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
         "storybook": "storybook dev -p 6006",
         "build:storybook": "build-storybook",
         "test": "vitest",
@@ -46,6 +52,29 @@
         "typescript": "~5.9.3",
         "typescript-eslint": "^8.45.0",
         "vite": "^7.1.7",
+        "vite-plugin-dts": "^4.5.4",
         "vitest": "^4.0.3"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Shakir-Afridi/react-headless-ui-kit.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Shakir-Afridi/react-headless-ui-kit/issues"
+    },
+    "homepage": "https://github.com/Shakir-Afridi/react-headless-ui-kit#readme",
+    "keywords": [
+        "react",
+        "hooks",
+        "typescript",
+        "headless",
+        "Dialog",
+        "Popover",
+        "Tabs",
+        "UI",
+        "components",
+        "design-system",
+        "primitives",
+        "accessible"
+    ]
 }
