@@ -5,6 +5,7 @@ export default defineConfig({
     title: "React Headless UI Kit",
     description:
         "A collection of unstyled, accessible, headless UI primitives for React. Focus on behavior and accessibility, leave styling to your design system.",
+    base: "/react-headless-ui-kit/docs",
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [

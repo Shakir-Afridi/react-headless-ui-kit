@@ -2,7 +2,7 @@
     "name": "react-headless-ui-kit",
     "description": "Headless, accessible React UI primitives — composable and design-system agnostic.",
     "private": false,
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": {
         "name": "Shakir Ullah",
         "email": "shakir201650@gmail.com"
