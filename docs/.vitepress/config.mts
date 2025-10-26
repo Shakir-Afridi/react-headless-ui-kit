@@ -20,6 +20,7 @@ export default defineConfig({
             "/components/": [
                 { text: "Dialog", link: "/components/dialog" },
                 { text: "Popover", link: "/components/popover" },
+                { text: "Accordian", link: "/components/accordian" },
             ],
         },
 

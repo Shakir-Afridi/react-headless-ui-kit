@@ -20,7 +20,7 @@ const liStyle = {
     borderBottom: "1px solid #eee",
 };
 
-export const Basic: Story = {
+export const Default: Story = {
     render: () => (
         <Popover>
             <PopoverTrigger

@@ -20,7 +20,7 @@ export default meta;
 
 type Story = StoryObj<typeof Dialog>;
 
-export const Basic: Story = {
+export const Default: Story = {
     render: () => {
         const [open, setOpen] = useState(false);
 

@@ -131,8 +131,8 @@ const { open, onClose, titleId, descriptionId } = useDialog();
 
 - [x] Dialog
 - [x] Popover
+- [x] Accordion
 - [ ] Tabs
-- [ ] Accordion
 - [ ] Menu
 - [ ] Tooltip
 - [ ] Combobox
