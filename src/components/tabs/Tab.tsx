@@ -14,7 +14,7 @@ export function Tab({ index, children, ...props }: TabProps) {
         if (ref.current) {
             registerTab(ref as React.RefObject<HTMLButtonElement>);
         }
-    }, [registerTab]);
+    }, []);
 
     // Keyboard navigation
     function handleKeyDown(e: React.KeyboardEvent<HTMLButtonElement>) {
