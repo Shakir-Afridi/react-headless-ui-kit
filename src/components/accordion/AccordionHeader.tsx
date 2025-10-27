@@ -24,8 +24,6 @@ export function AccordionHeader({
             {...props}
             style={{
                 ...props.style,
-                paddingTop: "0 !important",
-                paddingBottom: "0 !important",
                 margin: 0,
             }}
         >

@@ -26,6 +26,16 @@ const headerStyle: React.CSSProperties = {
     fontWeight: 500,
 };
 
+const multiHeaderStyle: React.CSSProperties = {
+    width: "100%",
+    textAlign: "left",
+    padding: "0.75rem 1rem",
+    background: "#f9fafb",
+    border: "1px solid #e5e7eb",
+    cursor: "pointer",
+    fontWeight: 500,
+};
+
 const panelStyle: React.CSSProperties = {
     padding: "1rem",
     border: "1px solid #e5e7eb",
@@ -54,7 +64,7 @@ export const SingleOpen: Story = {
                     </AccordionPanel>
                 </AccordionItem>
 
-                <AccordionItem>
+                <AccordionItem style={itemStyle}>
                     <AccordionHeader value="two">
                         <div style={headerStyle}>Section 2</div>
                     </AccordionHeader>
@@ -65,7 +75,7 @@ export const SingleOpen: Story = {
                     </AccordionPanel>
                 </AccordionItem>
 
-                <AccordionItem value="three">
+                <AccordionItem style={itemStyle}>
                     <AccordionHeader value="three">
                         <div style={headerStyle}>Section 3</div>
                     </AccordionHeader>
@@ -84,9 +94,9 @@ export const MultipleOpen: Story = {
     render: () => (
         <div style={{ width: 400 }}>
             <Accordion multiple defaultOpenItems={["one"]}>
-                <AccordionItem value="one">
+                <AccordionItem style={itemStyle}>
                     <AccordionHeader value="one">
-                        <span style={headerStyle}>Section 1</span>
+                        <div style={multiHeaderStyle}>Section 1</div>
                     </AccordionHeader>
                     <AccordionPanel value="one">
                         <div style={panelStyle}>
@@ -95,9 +105,9 @@ export const MultipleOpen: Story = {
                     </AccordionPanel>
                 </AccordionItem>
 
-                <AccordionItem value="two">
+                <AccordionItem style={itemStyle}>
                     <AccordionHeader value="two">
-                        <span style={headerStyle}>Section 2</span>
+                        <div style={multiHeaderStyle}>Section 2</div>
                     </AccordionHeader>
                     <AccordionPanel value="two">
                         <div style={panelStyle}>
@@ -106,9 +116,9 @@ export const MultipleOpen: Story = {
                     </AccordionPanel>
                 </AccordionItem>
 
-                <AccordionItem value="three">
+                <AccordionItem style={itemStyle}>
                     <AccordionHeader value="three">
-                        <span style={headerStyle}>Section 3</span>
+                        <div style={multiHeaderStyle}> Section 3</div>
                     </AccordionHeader>
                     <AccordionPanel value="three">
                         <div style={panelStyle}>
