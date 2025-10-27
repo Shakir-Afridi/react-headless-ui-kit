@@ -14,12 +14,16 @@ export function Tabs({ children, defaultIndex = 0 }: TabsProps) {
 
     // Register tab and panel refs for keyboard navigation
     function registerTab(ref: React.RefObject<HTMLButtonElement>) {
-        tabRefs.current.push(ref);
-        return tabRefs.current.length - 1;
+        if (!tabRefs.current.includes(ref)) {
+            tabRefs.current.push(ref);
+        }
+        return tabRefs.current.indexOf(ref);
     }
     function registerPanel(ref: React.RefObject<HTMLDivElement>) {
-        panelRefs.current.push(ref);
-        return panelRefs.current.length - 1;
+        if (!panelRefs.current.includes(ref)) {
+            panelRefs.current.push(ref);
+        }
+        return panelRefs.current.indexOf(ref);
     }
 
     return (
