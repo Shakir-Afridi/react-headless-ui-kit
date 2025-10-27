@@ -12,7 +12,7 @@ export function TabsPanel({ index, children, ...props }: TabsPanelProps) {
 
     useEffect(() => {
         registerPanel(ref as React.RefObject<HTMLDivElement>);
-    }, [registerPanel]);
+    }, []);
 
     if (selectedIndex !== index) return null;
 
