@@ -1,5 +1,5 @@
 import { useId, type ReactNode } from "react";
-import { useAccordion } from "./hooks/useAccordian";
+import { useAccordion } from "./hooks/useAccordion";
 
 // Header / Trigger
 interface AccordionHeaderProps
