@@ -153,5 +153,5 @@ React Headless UI Kit — maintained by passionate open-source developers who be
 
 ## ⭐ Support
 
-If you find this library useful, please give it a star ⭐ on GitHub —
+If you find this library useful, please give it a star ⭐ on [GitHub](https://github.com/Shakir-Afridi/react-headless-ui-kit) —
 it helps others discover and support the project!
