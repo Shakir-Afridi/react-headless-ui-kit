@@ -1,3 +1,4 @@
 export * from "./dialog";
-export * from "./Accordion";
+export * from "./accordion";
 export * from "./popover";
+export * from "./tabs";

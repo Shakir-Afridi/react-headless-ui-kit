@@ -13,16 +13,17 @@ export default defineConfig({
             { text: "Documentation", link: "/components/dialog" },
         ],
 
-        sidebar: {
-            "/guide/": [
-                { text: "Getting Started", link: "/guide/getting-started" },
-            ],
-            "/components/": [
-                { text: "Dialog", link: "/components/dialog" },
-                { text: "Popover", link: "/components/popover" },
-                { text: "Accordion", link: "/components/accordion" },
-            ],
-        },
+        sidebar: [
+            {
+                text: "Components",
+                items: [
+                    { text: "Dialog", link: "/components/dialog" },
+                    { text: "Popover", link: "/components/popover" },
+                    { text: "Accordion", link: "/components/accordion" },
+                    { text: "Tabs", link: "/components/tabs" },
+                ],
+            },
+        ],
 
         socialLinks: [
             {
