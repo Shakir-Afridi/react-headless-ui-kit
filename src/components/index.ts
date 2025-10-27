@@ -1,3 +1,3 @@
 export * from "./dialog";
-export * from "./accordian";
+export * from "./Accordion";
 export * from "./popover";
