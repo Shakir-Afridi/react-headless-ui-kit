@@ -25,6 +25,12 @@ export function DatePicker({
     const [selectedDate, setSelectedDate] = useState<Date | null>(defaultDate);
     const triggerRef = useRef<HTMLButtonElement>(null);
     const panelRef = useRef<HTMLDivElement>(null);
+    const onDateChangeRef = useRef(onDateChange);
+
+    // Keep the ref updated with the latest callback
+    useEffect(() => {
+        onDateChangeRef.current = onDateChange;
+    }, [onDateChange]);
 
     // Close on outside click
     useEffect(() => {
@@ -55,10 +61,11 @@ export function DatePicker({
 
     // Notify parent of date changes
     useEffect(() => {
-        if (onDateChange) {
-            onDateChange(selectedDate);
+        if (onDateChangeRef.current) {
+            onDateChangeRef.current(selectedDate);
         }
-    }, [selectedDate, onDateChange]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [selectedDate]);
 
     return (
         <DatePickerContext.Provider
