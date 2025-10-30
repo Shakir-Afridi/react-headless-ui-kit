@@ -26,6 +26,7 @@ export default defineConfig({
                     { text: "Slider", link: "/components/slider" },
                     { text: "Tooltip", link: "/components/tooltip" },
                     { text: "Switch", link: "/components/switch" },
+                    { text: "ComboBox", link: "/components/comboBox" },
                 ],
             },
         ],

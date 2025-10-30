@@ -7,3 +7,4 @@ export * from "./slider";
 export * from "./datePicker";
 export * from "./menu";
 export * from "./switch";
+export * from "./comboBox";

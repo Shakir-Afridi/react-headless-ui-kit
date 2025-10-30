@@ -133,12 +133,12 @@ const { open, onClose, titleId, descriptionId } = useDialog();
 - [x] Popover
 - [x] Accordion
 - [x] Tabs
-- [ ] Menu
-- [ ] Tooltip
-- [ ] Combobox
-- [ ] Switch
-- [ ] Slider
-- [ ] Date Picker
+- [x] Menu
+- [x] Tooltip
+- [x] Combobox
+- [x] Switch
+- [x] Slider
+- [x] Date Picker
 
 ## 🛠 Development
 
