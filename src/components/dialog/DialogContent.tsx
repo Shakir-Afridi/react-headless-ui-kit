@@ -16,6 +16,10 @@ export function DialogContent({
     return (
         <div
             {...props}
+            style={{
+                ...props.style,
+                background: props?.style?.background ?? "white",
+            }}
             ref={ref}
             role="dialog"
             aria-modal="true"

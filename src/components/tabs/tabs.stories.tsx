@@ -72,7 +72,7 @@ const tabPanelStyle = {
     height: "100px",
 };
 
-export const Default: Story = {
+export const CustomStyled: Story = {
     render: () => (
         <Tabs defaultIndex={0}>
             <StyledTabs />
@@ -118,6 +118,50 @@ export const Default: Story = {
                     <h3 style={{ margin: "0 0 0.5rem 0", color: "#007bff" }}>
                         Tab Three
                     </h3>
+                    <p>
+                        This is the content for Tab Three. Tabs are fully
+                        customizable.
+                    </p>
+                </div>
+            </TabsPanel>
+        </Tabs>
+    ),
+};
+
+function DefaultTabs() {
+    return (
+        <TabsList>
+            {[0, 1, 2].map((i) => (
+                <Tab key={i} index={i}>
+                    {["Tab One", "Tab Two", "Tab Three"][i]}
+                </Tab>
+            ))}
+        </TabsList>
+    );
+}
+
+export const Default: Story = {
+    render: () => (
+        <Tabs defaultIndex={0}>
+            <DefaultTabs />
+            <TabsPanel index={0}>
+                <div>
+                    <h3>Tab One</h3>
+                    <p>
+                        This is the content for Tab One. You can put anything
+                        here.
+                    </p>
+                </div>
+            </TabsPanel>
+            <TabsPanel index={1}>
+                <div>
+                    <h3>Tab Two</h3>
+                    <p>This is the content for Tab Two. Try switching tabs!</p>
+                </div>
+            </TabsPanel>
+            <TabsPanel index={2}>
+                <div>
+                    <h3>Tab Three</h3>
                     <p>
                         This is the content for Tab Three. Tabs are fully
                         customizable.

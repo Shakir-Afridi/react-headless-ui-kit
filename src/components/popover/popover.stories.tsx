@@ -20,7 +20,7 @@ const liStyle = {
     borderBottom: "1px solid #eee",
 };
 
-export const Default: Story = {
+export const CustomStyled: Story = {
     render: () => (
         <Popover>
             <PopoverTrigger
@@ -50,6 +50,21 @@ export const Default: Story = {
                     <li style={liStyle}>Profile</li>
                     <li style={liStyle}>Settings</li>
                     <li style={liStyle}>Logout</li>
+                </ul>
+            </PopoverPanel>
+        </Popover>
+    ),
+};
+
+export const Default: Story = {
+    render: () => (
+        <Popover>
+            <PopoverTrigger id="popover-trigger">Open Popover</PopoverTrigger>
+            <PopoverPanel>
+                <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+                    <li>Profile</li>
+                    <li>Settings</li>
+                    <li>Logout</li>
                 </ul>
             </PopoverPanel>
         </Popover>
