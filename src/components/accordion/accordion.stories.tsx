@@ -49,7 +49,7 @@ const itemStyle: React.CSSProperties = {
     width: "100%",
 };
 
-export const CustomStyled: Story = {
+export const CustomStyledSingle: Story = {
     render: () => (
         <div style={{ width: 400 }}>
             <Accordion>
@@ -90,7 +90,7 @@ export const CustomStyled: Story = {
     ),
 };
 
-export const MultipleOpen: Story = {
+export const CustomStyledMultiple: Story = {
     render: () => (
         <div style={{ width: 400 }}>
             <Accordion multiple defaultOpenItems={["one"]}>
