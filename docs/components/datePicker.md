@@ -18,22 +18,41 @@ npm install react-headless-ui-kit
 
 ## Usage
 
+### Basic Usage
+
 ```tsx
-import {
-  DatePicker,
-  DatePickerTrigger,
-  DatePickerPanel,
-  useDatePicker,
-} from "react-headless-ui-kit";
+import { DatePicker } from "react-headless-ui-kit";
 
 function ExampleDatePicker() {
   return (
-    <DatePicker onDateChange={(date) => console.log("Selected:", date)}>
+    <DatePicker 
+      placeholder="Select a date"
+      onDateChange={(date) => console.log("Selected:", date)}
+    />
+  );
+}
+```
+
+### Custom Styled Input
+
+```tsx
+import { DatePicker, DatePickerTrigger } from "react-headless-ui-kit";
+
+function CustomDatePicker() {
+  return (
+    <DatePicker 
+      customInput
+      onDateChange={(date) => console.log("Selected:", date)}
+    >
       <DatePickerTrigger
         placeholder="Select a date"
-        style={{ width: "250px" }}
+        style={{ 
+          width: "250px",
+          padding: "0.5rem",
+          border: "1px solid #93c5fd",
+          borderRadius: "6px"
+        }}
       />
-      <DatePickerPanel />
     </DatePicker>
   );
 }
@@ -45,9 +64,12 @@ function ExampleDatePicker() {
 
 | Prop           | Type                          | Description                       |
 |----------------|-------------------------------|-----------------------------------|
-| `children`     | `ReactNode`                   | DatePicker content                |
+| `children`     | `ReactNode`                   | Custom trigger or content (when using `customInput`) |
 | `defaultDate`  | `Date \| null`                | Initial selected date             |
 | `onDateChange` | `(date: Date \| null) => void`| Callback when date changes        |
+| `placeholder`  | `string`                      | Placeholder text for default input |
+| `width`        | `string`                      | Width of default input (e.g., "200px") |
+| `customInput`  | `boolean`                     | If true, uses children as custom trigger |
 
 ### `<DatePickerTrigger />`
 
@@ -88,10 +110,4 @@ Hook to access date picker context values inside subcomponents.
 
 ## Customization
 
-The component provides a styled default calendar UI. Customize via `style` props or provide custom children to `DatePickerPanel`:
-
-```tsx
-<DatePickerPanel>
-  <MyCustomCalendar />
-</DatePickerPanel>
-```
+The component provides a styled default calendar UI. You
