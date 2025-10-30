@@ -21,6 +21,7 @@ export default defineConfig({
                     { text: "Popover", link: "/components/popover" },
                     { text: "Accordion", link: "/components/accordion" },
                     { text: "Tabs", link: "/components/tabs" },
+                    { text: "DatePicker", link: "/components/datePicker" },
                 ],
             },
         ],
