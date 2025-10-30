@@ -41,7 +41,7 @@ import { DatePicker, DatePickerTrigger } from "react-headless-ui-kit";
 function CustomDatePicker() {
   return (
     <DatePicker 
-      customInput
+      custom
       onDateChange={(date) => console.log("Selected:", date)}
     >
       <DatePickerTrigger
@@ -53,6 +53,7 @@ function CustomDatePicker() {
           borderRadius: "6px"
         }}
       />
+      <DatePickerPanel />
     </DatePicker>
   );
 }
@@ -64,12 +65,12 @@ function CustomDatePicker() {
 
 | Prop           | Type                          | Description                       |
 |----------------|-------------------------------|-----------------------------------|
-| `children`     | `ReactNode`                   | Custom trigger or content (when using `customInput`) |
+| `children`     | `ReactNode`                   | Custom trigger or content (when using `custom`) |
 | `defaultDate`  | `Date \| null`                | Initial selected date             |
 | `onDateChange` | `(date: Date \| null) => void`| Callback when date changes        |
 | `placeholder`  | `string`                      | Placeholder text for default input |
 | `width`        | `string`                      | Width of default input (e.g., "200px") |
-| `customInput`  | `boolean`                     | If true, uses children as custom trigger |
+| `custom`  | `boolean`                     | If true, uses children as custom trigger |
 
 ### `<DatePickerTrigger />`
 

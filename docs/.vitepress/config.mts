@@ -22,6 +22,7 @@ export default defineConfig({
                     { text: "Accordion", link: "/components/accordion" },
                     { text: "Tabs", link: "/components/tabs" },
                     { text: "DatePicker", link: "/components/datePicker" },
+                    { text: "Menu", link: "/components/menu" },
                 ],
             },
         ],

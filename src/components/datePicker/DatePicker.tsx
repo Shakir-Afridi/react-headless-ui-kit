@@ -10,7 +10,7 @@ type DatePickerProps = {
     onDateChange?: (date: Date | null) => void;
     placeholder?: string;
     width?: string;
-    customInput?: boolean;
+    custom?: boolean;
 };
 
 export function DatePicker({
@@ -19,7 +19,7 @@ export function DatePicker({
     defaultDate = null,
     onDateChange,
     width,
-    customInput,
+    custom,
 }: DatePickerProps) {
     const [open, setOpen] = useState(false);
     const [selectedDate, setSelectedDate] = useState<Date | null>(defaultDate);
@@ -71,15 +71,17 @@ export function DatePicker({
                 panelRef,
             }}
         >
-            {customInput ? (
+            {custom ? (
                 children
             ) : (
-                <DatePickerTrigger
-                    placeholder={placeholder}
-                    style={{ width: width || "200px" }}
-                />
+                <>
+                    <DatePickerTrigger
+                        placeholder={placeholder}
+                        style={{ width: width || "200px" }}
+                    />
+                    <DatePickerPanel />
+                </>
             )}
-            <DatePickerPanel />
         </DatePickerContext.Provider>
     );
 }

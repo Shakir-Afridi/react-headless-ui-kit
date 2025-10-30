@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { DatePicker } from "./DatePicker";
 import { DatePickerTrigger } from "./DatePickerTrigger";
+import { DatePickerPanel } from "./DatePickerPanel";
 
 const meta: Meta<typeof DatePicker> = {
     title: "Components/DatePicker",
@@ -26,7 +27,7 @@ export const WithDefaultDate: Story = {
 export const CustomStyled: Story = {
     render: () => (
         <DatePicker
-            customInput
+            custom
             onDateChange={(date) => console.log("Selected:", date)}
         >
             <DatePickerTrigger
@@ -44,6 +45,7 @@ export const CustomStyled: Story = {
                     boxShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
                 }}
             />
+            <DatePickerPanel />
         </DatePicker>
     ),
 };
