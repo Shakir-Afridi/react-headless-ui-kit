@@ -23,6 +23,7 @@ export default defineConfig({
                     { text: "Tabs", link: "/components/tabs" },
                     { text: "DatePicker", link: "/components/datePicker" },
                     { text: "Menu", link: "/components/menu" },
+                    { text: "Slider", link: "/components/slider" },
                 ],
             },
         ],
