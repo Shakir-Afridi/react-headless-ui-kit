@@ -25,6 +25,7 @@ export default defineConfig({
                     { text: "Menu", link: "/components/menu" },
                     { text: "Slider", link: "/components/slider" },
                     { text: "Tooltip", link: "/components/tooltip" },
+                    { text: "Switch", link: "/components/switch" },
                 ],
             },
         ],
