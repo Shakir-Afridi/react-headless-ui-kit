@@ -24,6 +24,7 @@ export default defineConfig({
                     { text: "DatePicker", link: "/components/datePicker" },
                     { text: "Menu", link: "/components/menu" },
                     { text: "Slider", link: "/components/slider" },
+                    { text: "Tooltip", link: "/components/tooltip" },
                 ],
             },
         ],
