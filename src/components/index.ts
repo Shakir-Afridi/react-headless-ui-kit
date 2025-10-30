@@ -2,3 +2,8 @@ export * from "./dialog";
 export * from "./accordion";
 export * from "./popover";
 export * from "./tabs";
+export * from "./tooltip";
+export * from "./slider";
+export * from "./datePicker";
+export * from "./menu";
+export * from "./switch";
