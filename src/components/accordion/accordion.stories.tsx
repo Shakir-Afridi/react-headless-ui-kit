@@ -49,7 +49,7 @@ const itemStyle: React.CSSProperties = {
     width: "100%",
 };
 
-export const SingleOpen: Story = {
+export const CustomStyled: Story = {
     render: () => (
         <div style={{ width: 400 }}>
             <Accordion>
@@ -122,6 +122,47 @@ export const MultipleOpen: Story = {
                     </AccordionHeader>
                     <AccordionPanel value="three">
                         <div style={panelStyle}>
+                            <p>Content for section 3</p>
+                        </div>
+                    </AccordionPanel>
+                </AccordionItem>
+            </Accordion>
+        </div>
+    ),
+};
+
+export const Default: Story = {
+    render: () => (
+        <div style={{ width: 400 }}>
+            <Accordion>
+                <AccordionItem>
+                    <AccordionHeader value="one">
+                        <div>Section 1</div>
+                    </AccordionHeader>
+                    <AccordionPanel value="one">
+                        <div>
+                            <p>Content for section 1</p>
+                        </div>
+                    </AccordionPanel>
+                </AccordionItem>
+
+                <AccordionItem>
+                    <AccordionHeader value="two">
+                        <div>Section 2</div>
+                    </AccordionHeader>
+                    <AccordionPanel value="two">
+                        <div>
+                            <p>Content for section 2</p>
+                        </div>
+                    </AccordionPanel>
+                </AccordionItem>
+
+                <AccordionItem>
+                    <AccordionHeader value="three">
+                        <div>Section 3</div>
+                    </AccordionHeader>
+                    <AccordionPanel value="three">
+                        <div>
                             <p>Content for section 3</p>
                         </div>
                     </AccordionPanel>

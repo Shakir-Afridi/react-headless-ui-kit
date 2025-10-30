@@ -20,7 +20,7 @@ export default meta;
 
 type Story = StoryObj<typeof Dialog>;
 
-export const Default: Story = {
+export const CustomStyled: Story = {
     render: () => {
         const [open, setOpen] = useState(false);
 
@@ -101,6 +101,48 @@ export const Default: Story = {
                 >
                     Open dialog
                 </button>
+                <Dialog open={open} onClose={() => setOpen(false)}>
+                    <DialogInner />
+                </Dialog>
+            </div>
+        );
+    },
+};
+
+export const Default: Story = {
+    render: () => {
+        const [open, setOpen] = useState(false);
+
+        function DialogInner() {
+            const { onClose } = useDialog();
+
+            return (
+                <DialogOverlay>
+                    <DialogContent>
+                        <DialogTitle>Hook-powered Dialog</DialogTitle>
+                        <DialogContent>
+                            This dialog uses <code>useDialog()</code> to access
+                            context values.
+                        </DialogContent>
+                        <DialogActions>
+                            <button
+                                onClick={() => {
+                                    alert("Confirmed!");
+                                    onClose();
+                                }}
+                            >
+                                Confirm
+                            </button>
+                            <button onClick={onClose}>Close</button>
+                        </DialogActions>
+                    </DialogContent>
+                </DialogOverlay>
+            );
+        }
+
+        return (
+            <div>
+                <button onClick={() => setOpen(true)}>Open dialog</button>
                 <Dialog open={open} onClose={() => setOpen(false)}>
                     <DialogInner />
                 </Dialog>
