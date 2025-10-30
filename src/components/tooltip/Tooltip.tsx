@@ -5,9 +5,10 @@ import { TooltipContext } from "./TooltipContext";
 type TooltipProps = {
     children: ReactNode;
     delay?: number;
+    tabIndex?: number;
 };
 
-export function Tooltip({ children, delay = 200 }: TooltipProps) {
+export function Tooltip({ children, delay = 200, tabIndex = 0 }: TooltipProps) {
     const [open, setOpen] = useState(false);
     const triggerRef = useRef<HTMLElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
@@ -48,15 +49,24 @@ export function Tooltip({ children, delay = 200 }: TooltipProps) {
         setOpen(false);
     };
 
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleOpen();
+        }
+    };
+
     return (
         <TooltipContext.Provider
             value={{ open, setOpen, triggerRef, contentRef }}
         >
             <div
+                tabIndex={tabIndex}
                 onMouseEnter={handleOpen}
                 onMouseLeave={handleClose}
                 onFocus={handleOpen}
                 onBlur={handleClose}
+                onKeyDown={handleKeyDown}
                 style={{ display: "inline-block", position: "relative" }}
             >
                 {children}
