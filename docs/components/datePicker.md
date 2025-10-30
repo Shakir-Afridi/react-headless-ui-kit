@@ -111,4 +111,4 @@ Hook to access date picker context values inside subcomponents.
 
 ## Customization
 
-The component provides a styled default calendar UI. You
+The component provides a styled default calendar UI. You can fully customize the appearance and behavior by using the `custom` prop and providing your own trigger and panel components as children, or by overriding styles via the `style` prop.
