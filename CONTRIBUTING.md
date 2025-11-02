@@ -109,6 +109,5 @@ git push origin feature/your-feature-name
 - The motivation or issue reference (if any).
 - Screenshots or demos (if it affects UI behavior).
 
-Thank you for helping improve `react-headless-ui-kit!` 💙
+Thank you for helping improve `react-headless-ui-kit`! 💙
 Together, we’re shaping a better UI ecosystem.
-
